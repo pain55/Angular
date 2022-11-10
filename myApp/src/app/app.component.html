@@ -19,9 +19,30 @@
 
 <!-- property binding tut -->
 <div>
-  
+    
+  <input [name]="name"  type="text" value="Sai">
+  <!-- We can bind boolean values also which is not possible with interpolation which only works with strings -->
+<!-- interpolatin doesn't work for boolean-->
+  <input type="text" disabled="{{ isDisabled}}">
+  <!-- property binding works -->
+  <input type="text" [disabled]="isDisabled">
 
 </div>
 
-  <input type="text" value="Sai">
+<!-- Class Binding Tut -->
+<div>
+  <!-- tradition way of applying class  -->
+  <h4 class="text-success"> Hello </h4>
+  <!-- class binding angular way -->
+  <h4 [class]="successClass"> Hello </h4>
+  <!-- if we give both traditional and angular declaration it display angular way only -->
+
+  <!-- Applying a class based on expression -->
+  <h4 [class.text-danger]="hasError"> if Red then has a error(flag=true) else no error</h4>
+
+  <!-- Applying using ngClass Directive -->
+  <!-- if you want to apply multiple class then we use ngClass dir -->
+  <!-- A directive is nothing but a custom html attribute which angular provides -->
+  <h4 [ngClass]="messageClasses">I'm Kratos</h4>
+
 </div>

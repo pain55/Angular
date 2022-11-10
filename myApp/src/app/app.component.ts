@@ -8,7 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'myApp';
   name: String = "Sai";
-  flag: boolean = false;
+  isDisabled: boolean = false;
+  successClass="text-success";
+  hasError: boolean = false;
+  isSpecial = true;
+
+  messageClasses = {
+    "text-success" : !this.hasError,
+    "text-danger": this.hasError,
+    "text-special": this.isSpecial
+  }
 
   greet() : String{
     return "hello " + this.name;
